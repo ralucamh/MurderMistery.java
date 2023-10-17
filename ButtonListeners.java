@@ -11,6 +11,13 @@ public class ButtonListeners implements ActionListener {
     JButton buttonC;
     JButton buttonE;
 
+    JButton weaponA;
+    JButton weaponB;
+    JButton weaponC;
+    JButton weaponD;
+    JButton weaponE;
+    JButton weaponF;
+
     JFrame suspect;
     JFrame weapon;
     JFrame room;
@@ -29,7 +36,7 @@ public class ButtonListeners implements ActionListener {
         buttonM.addActionListener(this); 
 
         buttonV = new JButton();
-        buttonV.setBounds(150, 10, 200, 40);
+        buttonV.setBounds(150, 10, 200, 40); 
         suspect.add(buttonV);
         buttonV.addActionListener(this); 
 
@@ -53,6 +60,35 @@ public class ButtonListeners implements ActionListener {
         suspect.add(buttonE);
         buttonE.addActionListener(this); 
 
+        weaponA = new JButton();
+        weaponA.setBounds(100, 10, 200, 40);
+        weapon.add(weaponA);
+        weaponA.addActionListener(this);
+
+        weaponB = new JButton();
+        weaponB.setBounds(100, 10, 200, 40);
+        weapon.add(weaponB);
+        weaponB.addActionListener(this);
+
+        weaponC = new JButton();
+        weaponC.setBounds(100, 10, 200, 40);
+        weapon.add(weaponC);
+        weaponC.addActionListener(this);
+
+        weaponD = new JButton();
+        weaponD.setBounds(100, 10, 200, 40);
+        weapon.add(weaponD);
+        weaponD.addActionListener(this);
+
+        weaponE = new JButton();
+        weaponE.setBounds(100, 10, 200, 40);
+        weapon.add(weaponE);
+        weaponE.addActionListener(this);
+
+        weaponF = new JButton();
+        weaponF.setBounds(100, 10, 200, 40);
+        weapon.add(weaponF);
+        weaponF.addActionListener(this);
 
     }
 
