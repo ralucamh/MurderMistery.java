@@ -43,27 +43,30 @@ public class Display {
         String[] columnNames = { "Who?", "", "What?", "", "Where?", "" };
         
         JTable j = new JTable(data, columnNames);
-  
+        j.setBounds(100, 150, 100, 100);
+        j.setVisible(true);
+    
+        j.setSize(10, 10);
+        JScrollPane sp = new JScrollPane(j);
+        sp.setSize(10, 10);
+        Panel.add(sp, BorderLayout.CENTER);
+    
+        //Panel.setLocation(250, 170);
+      //sp.setLocation(250, 75);
 
-        j.setRowHeight(30);
-         JScrollPane sp = new JScrollPane(j);
-         Global.frame.add(sp);
-        sp.setSize(700,230);
-        sp.setVisible(true);
-
-        sp.setLocation(0, 300);
+        JPanel transp = new JPanel();
         
 
         JButton button = new JButton("Roll the dice");
         button.setBackground(Color.green);
-        button.setBounds(265, 570, 170, 50);
-        Global.frame.add(button);
-
+        button.setBounds(150, 100, 20, 40);
+        // button.setPreferredSize(new Dimension(100, 30));
+        Panel.add(button, BorderLayout.SOUTH);
         MyListener myListener = new MyListener();
         button.addActionListener(myListener);
 
         Global.frame.add(Panel);
-        Global.frame.setSize(700, 700);
+        Global.frame.setSize(500, 500);
         Global.frame.setVisible(true);
         Global.frame.setLocationRelativeTo(null);
         Global.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
