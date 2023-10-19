@@ -28,7 +28,7 @@ public class Display {
     void create() {
         
 
-        JPanel Panel = new JPanel();
+        JPanel panel = new JPanel();
         String[][] data = {
             { "", "", "", "", "", ""},
             { "", "", "", "", "", ""},
@@ -46,23 +46,25 @@ public class Display {
   
 
         j.setRowHeight(30);
-         JScrollPane sp = new JScrollPane(j);
-         Global.frame.add(sp);
-        sp.setSize(700,230);
+        JScrollPane sp = new JScrollPane(j);
+        Global.frame.add(sp);
+        sp.setSize(700, 230);
         sp.setVisible(true);
 
         sp.setLocation(0, 300);
         
 
         JButton button = new JButton("Roll the dice");
-        button.setBackground(Color.green);
+        Color colorOver = new Color(51, 153, 255);
+        button.setBackground(colorOver);
         button.setBounds(265, 570, 170, 50);
+        Color borderColor = new Color(0, 0, 0);
         Global.frame.add(button);
 
         MyListener myListener = new MyListener();
         button.addActionListener(myListener);
 
-        Global.frame.add(Panel);
+        Global.frame.add(panel);
         Global.frame.setSize(700, 700);
         Global.frame.setVisible(true);
         Global.frame.setLocationRelativeTo(null);
