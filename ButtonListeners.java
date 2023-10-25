@@ -11,96 +11,99 @@ public class ButtonListeners implements ActionListener {
     JButton buttonC;
     JButton buttonE;
 
-    JButton weaponA;
-    JButton weaponB;
+    JButton weaponS;
+    JButton weaponG;
+    JButton weaponR;
+    JButton weaponP;
     JButton weaponC;
-    JButton weaponD;
-    JButton weaponE;
-    JButton weaponF;
+    JButton weaponB;
 
-    JFrame suspect;
-    JFrame weapon;
-    JFrame room;
+    ImageIcon v = new ImageIcon("C:\\Vasilica.jpg");
 
     String[] assumption = {"", "", ""};
     
     public ButtonListeners() {
 
-        suspect = new JFrame("Make an assumption." + '\n' + "Choose a suspect");
-        weapon = new JFrame("Make an assumption." + '\n' + "Choose a weapon");
-        room = new JFrame("Make an assumption." + '\n' + "Choose a room");
+        Global.suspect.setSize(700, 700);
+        Global.suspect.setLocationRelativeTo(null);
+        Global.suspect.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        buttonM = new JButton();
-        buttonM.setBounds(150, 10, 200, 40);
-        suspect.add(buttonM);
+        buttonM = new JButton(v);
+        buttonM.setBounds(30, 30, 200, 240);
+        Global.suspect.add(buttonM);
         buttonM.addActionListener(this); 
 
-        buttonV = new JButton();
-        buttonV.setBounds(150, 10, 200, 40); 
-        suspect.add(buttonV);
-        buttonV.addActionListener(this); 
+        buttonC = new JButton();
+        buttonC.setBounds(240, 30, 200, 240);
+        Global.suspect.add(buttonC);
+        buttonC.addActionListener(this); 
 
         buttonG = new JButton();
-        buttonG.setBounds(150, 10, 200, 40);
-        suspect.add(buttonM);
+        buttonG.setBounds(20, 40, 0, 0);
+        Global.suspect.add(buttonM);
         buttonG.addActionListener(this); 
 
         buttonR = new JButton();
-        buttonR.setBounds(150, 10, 200, 40);
-        suspect.add(buttonR);
+        buttonR.setBounds(100, 150, 0, 0);
+        Global.suspect.add(buttonR);
         buttonR.addActionListener(this); 
 
-        buttonC = new JButton();
-        buttonC.setBounds(150, 10, 200, 40);
-        suspect.add(buttonC);
-        buttonC.addActionListener(this); 
+        
+        buttonV = new JButton();
+        buttonV.setBounds(260, 30, 0, 0); 
+        buttonM.setBackground(Color.green);
+        Global.suspect.add(buttonV);
+        buttonV.addActionListener(this);
 
         buttonE = new JButton();
-        buttonE.setBounds(150, 10, 200, 40);
-        suspect.add(buttonE);
+        buttonE.setBounds(200, 150, 0, 0);
+        Global.suspect.add(buttonE);
         buttonE.addActionListener(this); 
 
-        weaponA = new JButton();
-        weaponA.setBounds(100, 10, 200, 40);
-        weapon.add(weaponA);
-        weaponA.addActionListener(this);
+        weaponS = new JButton();
+        weaponS.setBounds(100, 10, 200, 40);
+        Global.weapon.add(weaponS);
+        weaponS.addActionListener(this);
 
-        weaponB = new JButton();
-        weaponB.setBounds(100, 10, 200, 40);
-        weapon.add(weaponB);
-        weaponB.addActionListener(this);
+        weaponG = new JButton();
+        weaponG.setBounds(100, 10, 200, 40);
+        Global.weapon.add(weaponG);
+        weaponG.addActionListener(this);
+
+        weaponR = new JButton();
+        weaponR.setBounds(100, 10, 200, 40);
+        Global.weapon.add(weaponR);
+        weaponR.addActionListener(this);
+
+        weaponP = new JButton();
+        weaponP.setBounds(100, 10, 200, 40);
+        Global.weapon.add(weaponP);
+        weaponP.addActionListener(this);
 
         weaponC = new JButton();
         weaponC.setBounds(100, 10, 200, 40);
-        weapon.add(weaponC);
+        Global.weapon.add(weaponC);
         weaponC.addActionListener(this);
 
-        weaponD = new JButton();
-        weaponD.setBounds(100, 10, 200, 40);
-        weapon.add(weaponD);
-        weaponD.addActionListener(this);
+        weaponB = new JButton();
+        weaponB.setBounds(100, 10, 200, 40);
+        Global.weapon.add(weaponB);
+        weaponB.addActionListener(this);
 
-        weaponE = new JButton();
-        weaponE.setBounds(100, 10, 200, 40);
-        weapon.add(weaponE);
-        weaponE.addActionListener(this);
+       
 
-        weaponF = new JButton();
-        weaponF.setBounds(100, 10, 200, 40);
-        weapon.add(weaponF);
-        weaponF.addActionListener(this);
-
+        
     }
 
-    public static void main(String args[]) {
-      //  ButtonListeners btnevents = new ButtonListeners();
-    }
+   
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        
         if (e.getSource() == buttonM) {
             assumption[0] = "Marcel";
+            System.out.println("ye");
         }
         if (e.getSource() == buttonV) {
             assumption[0] = "Vasilica";
@@ -118,11 +121,36 @@ public class ButtonListeners implements ActionListener {
             assumption[0] = "Eusebiu";
         }
               
-        suspect.setVisible(false);
-        weapon.setVisible(true);
+        //Global.suspect.setVisible(false);
+        //Global.weapon.setVisible(true);
             
+        if (e.getSource() == weaponS) {
+            assumption[1] = "spoon";
+        }
+
+        if (e.getSource() == weaponG) {
+            assumption[1] = "gun";
+        }
+
+        if (e.getSource() == weaponR) {
+            assumption[1] = "rope";
+        }
+
+        if (e.getSource() == weaponP) {
+            assumption[1] = "poison";
+        }
+
+        if (e.getSource() == weaponC) {
+            assumption[1] = "crossbow";
+        }
         
+        if (e.getSource() == weaponB) {
+            assumption[1] = "broom";
+        }
+
 
     }
-    
+    // public static void main(String args[]) {
+      //  ButtonListeners btnevents = new ButtonListeners();
+   // }
 }
