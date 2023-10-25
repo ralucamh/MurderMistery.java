@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+
+    
 public class ButtonListeners implements ActionListener {
 
     JButton buttonM;
@@ -23,6 +25,7 @@ public class ButtonListeners implements ActionListener {
     String[] assumption = {"", "", ""};
     
     public ButtonListeners() {
+
 
         Global.suspect.setSize(700, 700);
         Global.suspect.setLocationRelativeTo(null);
