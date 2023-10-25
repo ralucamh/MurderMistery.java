@@ -4,19 +4,29 @@ import javax.swing.*;
 import java.util.Random;
 
 class Global {
-    public static JFrame frame = new JFrame ("Play");
+    public static JFrame frame = new JFrame("Play");
+    public static JFrame suspect = new JFrame("Make an assumption.  Choose a suspect");
+    public static JFrame    weapon = new JFrame("Make an assumption.    Choose a weapon");
+    public static JFrame   room = new JFrame("Make an assumption.   Choose a room");
 }
 
 class MyListener implements ActionListener {
 
+    ButtonListeners btn = new ButtonListeners();
+    Deck d = new Deck();
 
     Random r = new Random();
     int n;
+
     @Override
     public void actionPerformed(ActionEvent e) {
         n = r.nextInt(6) + 1;
+        System.out.println(n);
         if (n == 5 || n == 6) {
-
+            Global.frame.setVisible(false);
+            btn.actionPerformed(e);
+            Global.suspect.setVisible(true);
+         
         }
         
     }
@@ -58,7 +68,6 @@ public class Display {
         Color colorOver = new Color(51, 153, 255);
         button.setBackground(colorOver);
         button.setBounds(265, 570, 170, 50);
-        Color borderColor = new Color(0, 0, 0);
         Global.frame.add(button);
 
         MyListener myListener = new MyListener();
@@ -73,6 +82,7 @@ public class Display {
         
 
     }
+    
 
     public static void main(String[] args) {
         new Display().create();
