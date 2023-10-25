@@ -13,6 +13,9 @@ public class ButtonListeners implements ActionListener {
     JButton buttonC;
     JButton buttonE;
 
+    JButton deck[] = new JButton[4];
+
+
     JButton weaponS;
     JButton weaponG;
     JButton weaponR;
@@ -20,7 +23,7 @@ public class ButtonListeners implements ActionListener {
     JButton weaponC;
     JButton weaponB;
 
-    ImageIcon v = new ImageIcon("C:\\Vasilica.jpg");
+    ImageIcon v = new ImageIcon("C:\\Users\\marza\\OneDrive\\Documents\\GitHub\\MurderMistery.java\\" + name + "jpg");
 
     String[] assumption = {"", "", ""};
     
@@ -30,30 +33,38 @@ public class ButtonListeners implements ActionListener {
         Global.suspect.setLocationRelativeTo(null);
         Global.suspect.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        JTextArea jTextField = new JTextArea("Hello", 10, 10);
+        Global.suspect.add(jTextField);
+
+        /*JButton b=new JButton();  
+        b.setBounds(50,100,95,30);  
+        Global.suspect.add(b);  */
+       
+        Global.suspect.setLayout(null);  
+        //Global.suspect.setVisible(true);   
+
         buttonM = new JButton(v);
         buttonM.setBounds(30, 30, 200, 240);
         Global.suspect.add(buttonM);
         buttonM.addActionListener(this); 
-
+        
         buttonC = new JButton();
-        buttonC.setBounds(240, 30, 200, 240);
+        buttonC.setBounds(240, 30, 0, 0);
         Global.suspect.add(buttonC);
         buttonC.addActionListener(this); 
-
+         
         buttonG = new JButton();
         buttonG.setBounds(20, 40, 0, 0);
         Global.suspect.add(buttonM);
         buttonG.addActionListener(this); 
-
+        
         buttonR = new JButton();
         buttonR.setBounds(100, 150, 0, 0);
         Global.suspect.add(buttonR);
         buttonR.addActionListener(this); 
 
-        
         buttonV = new JButton();
         buttonV.setBounds(260, 30, 0, 0); 
-        buttonM.setBackground(Color.green);
         Global.suspect.add(buttonV);
         buttonV.addActionListener(this);
 
@@ -61,7 +72,7 @@ public class ButtonListeners implements ActionListener {
         buttonE.setBounds(200, 150, 0, 0);
         Global.suspect.add(buttonE);
         buttonE.addActionListener(this); 
-
+        
         weaponS = new JButton();
         weaponS.setBounds(100, 10, 200, 40);
         Global.weapon.add(weaponS);
@@ -97,6 +108,13 @@ public class ButtonListeners implements ActionListener {
         
     }
 
+    public void paintDeck(String[] deck){
+        for (int i = 0; i< 4; i++){
+            this.deck[i] = new JButton(deck[i]);
+            Global.frame.add(this.deck[i]);
+        }
+    }
+
    
 
     @Override
@@ -118,10 +136,12 @@ public class ButtonListeners implements ActionListener {
         }
         if (e.getSource() == buttonC) {
             assumption[0] = "Costel";
+            System.out.println("last");
         }
-        if (e.getSource() == buttonE) {
-            assumption[0] = "Eusebiu";
-        }
+        //if (e.getSource() == buttonE) {
+        //    assumption[0] = "Eusebiu";
+           
+        //}
               
         //Global.suspect.setVisible(false);
         //Global.weapon.setVisible(true);

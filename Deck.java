@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import javax.swing.JButton;
+
 public class Deck {
     
     void assign() {
@@ -8,6 +10,8 @@ public class Deck {
         String[] deck = new String[19];
         String[][] players = new String[4][4];
         String[] solution = new String[3];
+        
+        
 
         deck[0] = "Marcela";
         deck[1] = "Vasilica";
@@ -39,18 +43,20 @@ public class Deck {
                 deck[n] = "";
             }
         } 
-
+        // The player
         for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals("")) {
                 players[i][0] = deck[n]; 
                 deck[n] = "";
             }
         }
+        
+
 
         for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals("")) {
                 players[i][1] = deck[n];
                 deck[n] = "";
             }
@@ -58,7 +64,7 @@ public class Deck {
 
         for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals("")) {
                 players[i][2] = deck[n];
                 deck[n] = "";
             }
@@ -66,12 +72,16 @@ public class Deck {
 
         for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals("")) { 
                 players[i][3] = deck[n];
                 deck[n] = "";
             }
         }
 
     
+    }
+
+    public void paintCards(ButtonListeners btn, String[] deck){
+        btn.paintDeck(deck);
     }
 }
