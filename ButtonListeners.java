@@ -23,7 +23,7 @@ public class ButtonListeners implements ActionListener {
     JButton weaponC;
     JButton weaponB;
 
-    ImageIcon v = new ImageIcon("C:\\Users\\marza\\OneDrive\\Documents\\GitHub\\MurderMistery.java\\" + name + "jpg");
+    ImageIcon v = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Vasilica.jpg");
 
     String[] assumption = {"", "", ""};
     
@@ -44,32 +44,32 @@ public class ButtonListeners implements ActionListener {
         //Global.suspect.setVisible(true);   
 
         buttonM = new JButton(v);
-        buttonM.setBounds(30, 30, 200, 240);
+        buttonM.setBounds(30, 25, 200, 300);
         Global.suspect.add(buttonM);
         buttonM.addActionListener(this); 
         
         buttonC = new JButton();
-        buttonC.setBounds(240, 30, 0, 0);
+        buttonC.setBounds(240, 25, 200, 300);
         Global.suspect.add(buttonC);
         buttonC.addActionListener(this); 
          
         buttonG = new JButton();
-        buttonG.setBounds(20, 40, 0, 0);
-        Global.suspect.add(buttonM);
+        buttonG.setBounds(450, 25, 200, 300);
+        Global.suspect.add(buttonG);
         buttonG.addActionListener(this); 
         
         buttonR = new JButton();
-        buttonR.setBounds(100, 150, 0, 0);
+        buttonR.setBounds(30, 335, 200, 300);
         Global.suspect.add(buttonR);
         buttonR.addActionListener(this); 
 
         buttonV = new JButton();
-        buttonV.setBounds(260, 30, 0, 0); 
+        buttonV.setBounds(240, 335, 200, 300); 
         Global.suspect.add(buttonV);
         buttonV.addActionListener(this);
 
         buttonE = new JButton();
-        buttonE.setBounds(200, 150, 0, 0);
+        buttonE.setBounds(450, 335, 200, 300);
         Global.suspect.add(buttonE);
         buttonE.addActionListener(this); 
         
