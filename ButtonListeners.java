@@ -15,7 +15,6 @@ public class ButtonListeners implements ActionListener {
 
     JButton deck[] = new JButton[4];
 
-
     JButton weaponS;
     JButton weaponG;
     JButton weaponR;
@@ -23,8 +22,32 @@ public class ButtonListeners implements ActionListener {
     JButton weaponC;
     JButton weaponB;
 
-    ImageIcon v = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Vasilica.jpg");
+    JButton kitchen;
+    JButton lounge;
+    JButton billiardRoom;
+    JButton study;
+    JButton hall;
+    JButton library;
+    JButton conservatory;
 
+    void visible(JFrame x, JFrame y) {
+        x.setVisible(false);
+        y.setVisible(true);
+    }
+
+    ImageIcon v = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Vasilica.jpg");
+    ImageIcon e = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Eusebiu.jpg");
+    ImageIcon m = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Marcela.jpg");
+    ImageIcon g = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Gigela.jpg");
+    ImageIcon r = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Relu.jpg");
+    ImageIcon c = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Costel.jpg");
+    ImageIcon broom = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Broom.jpg");
+    ImageIcon crossbow = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Crossbow.jpg");
+    ImageIcon gun = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Gun.jpg");
+    ImageIcon poison = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Poison.jpg");
+    ImageIcon spoon = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Spoon.jpg");
+    ImageIcon rope = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Rope.jpg");
+    
     String[] assumption = {"", "", ""};
     
     public ButtonListeners() {
@@ -32,78 +55,93 @@ public class ButtonListeners implements ActionListener {
         Global.suspect.setSize(700, 700);
         Global.suspect.setLocationRelativeTo(null);
         Global.suspect.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Global.suspect.setLayout(null); 
 
-        JTextArea jTextField = new JTextArea("Hello", 10, 10);
-        Global.suspect.add(jTextField);
+        Global.weapon.setSize(700, 700);
+        Global.weapon.setLocationRelativeTo(null);
+        Global.weapon.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Global.weapon.setLayout(null); 
 
-        /*JButton b=new JButton();  
-        b.setBounds(50,100,95,30);  
-        Global.suspect.add(b);  */
-       
-        Global.suspect.setLayout(null);  
-        //Global.suspect.setVisible(true);   
-
-        buttonM = new JButton(v);
+        Global.room.setSize(700, 700);
+        Global.room.setLocationRelativeTo(null);
+        Global.room.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Global.room.setLayout(null); 
+          
+        buttonM = new JButton(m);
         buttonM.setBounds(30, 25, 200, 300);
         Global.suspect.add(buttonM);
         buttonM.addActionListener(this); 
         
-        buttonC = new JButton();
+        buttonC = new JButton(c);
         buttonC.setBounds(240, 25, 200, 300);
         Global.suspect.add(buttonC);
         buttonC.addActionListener(this); 
          
-        buttonG = new JButton();
-        buttonG.setBounds(450, 25, 200, 300);
+        buttonG = new JButton(g);
+        buttonG.setBounds(240, 335, 200, 300);
         Global.suspect.add(buttonG);
         buttonG.addActionListener(this); 
         
-        buttonR = new JButton();
+        buttonR = new JButton(r);
         buttonR.setBounds(30, 335, 200, 300);
         Global.suspect.add(buttonR);
         buttonR.addActionListener(this); 
 
-        buttonV = new JButton();
-        buttonV.setBounds(240, 335, 200, 300); 
+        buttonV = new JButton(v);
+        buttonV.setBounds(450, 25, 200, 300); 
         Global.suspect.add(buttonV);
         buttonV.addActionListener(this);
 
-        buttonE = new JButton();
+        buttonE = new JButton(e);
         buttonE.setBounds(450, 335, 200, 300);
         Global.suspect.add(buttonE);
         buttonE.addActionListener(this); 
         
-        weaponS = new JButton();
-        weaponS.setBounds(100, 10, 200, 40);
+        weaponS = new JButton(spoon);
+        weaponS.setBounds(30, 25, 200, 280);
         Global.weapon.add(weaponS);
         weaponS.addActionListener(this);
 
-        weaponG = new JButton();
-        weaponG.setBounds(100, 10, 200, 40);
+        weaponG = new JButton(gun);
+        weaponG.setBounds(240, 25, 200, 280);
         Global.weapon.add(weaponG);
         weaponG.addActionListener(this);
 
-        weaponR = new JButton();
-        weaponR.setBounds(100, 10, 200, 40);
+        weaponR = new JButton(rope);
+        weaponR.setBounds(450, 25, 200, 280);
         Global.weapon.add(weaponR);
         weaponR.addActionListener(this);
 
-        weaponP = new JButton();
-        weaponP.setBounds(100, 10, 200, 40);
+        weaponP = new JButton(poison);
+        weaponP.setBounds(30, 335, 200, 280);
         Global.weapon.add(weaponP);
         weaponP.addActionListener(this);
 
-        weaponC = new JButton();
-        weaponC.setBounds(100, 10, 200, 40);
+        weaponC = new JButton(crossbow);
+        weaponC.setBounds(240, 335, 200, 280);
         Global.weapon.add(weaponC);
         weaponC.addActionListener(this);
 
-        weaponB = new JButton();
-        weaponB.setBounds(100, 10, 200, 40);
+        weaponB = new JButton(broom);
+        weaponB.setBounds(450, 335, 200, 280);
         Global.weapon.add(weaponB);
         weaponB.addActionListener(this);
 
+        kitchen = new JButton();
+        kitchen.setBounds(450, 335, 200, 300);
+        Global.room.add(kitchen);
+        kitchen.addActionListener(this);
+
+        lounge = new JButton();
+        lounge.setBounds(450, 335, 200, 300);
+        Global.room.add(lounge);
+        lounge.addActionListener(this);
        
+        billiardRoom = new JButton();
+        billiardRoom.setBounds(450, 335, 200, 300);
+        Global.room.add(billiardRoom);
+        billiardRoom.addActionListener(this);
+        
 
         
     }
@@ -115,7 +153,6 @@ public class ButtonListeners implements ActionListener {
         }
     }
 
-   
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -123,28 +160,28 @@ public class ButtonListeners implements ActionListener {
         
         if (e.getSource() == buttonM) {
             assumption[0] = "Marcel";
-            System.out.println("ye");
+            visible(Global.suspect, Global.weapon);
         }
         if (e.getSource() == buttonV) {
             assumption[0] = "Vasilica";
+            visible(Global.suspect, Global.weapon);
         }
         if (e.getSource() == buttonG) {
             assumption[0] = "Gigela";
+            visible(Global.suspect, Global.weapon);
         }
         if (e.getSource() == buttonR) {
             assumption[0] = "Relu";
+            visible(Global.suspect, Global.weapon);
         }
         if (e.getSource() == buttonC) {
             assumption[0] = "Costel";
-            System.out.println("last");
+            visible(Global.suspect, Global.weapon);
         }
-        //if (e.getSource() == buttonE) {
-        //    assumption[0] = "Eusebiu";
-           
-        //}
-              
-        //Global.suspect.setVisible(false);
-        //Global.weapon.setVisible(true);
+        if (e.getSource() == buttonE) {
+            assumption[0] = "Eusebiu";
+            visible(Global.suspect, Global.weapon);
+        }
             
         if (e.getSource() == weaponS) {
             assumption[1] = "spoon";
