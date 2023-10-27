@@ -35,18 +35,18 @@ public class ButtonListeners implements ActionListener {
         y.setVisible(true);
     }
 
-    ImageIcon v = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Vasilica.jpg");
-    ImageIcon e = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Eusebiu.jpg");
-    ImageIcon m = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Marcela.jpg");
-    ImageIcon g = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Gigela.jpg");
-    ImageIcon r = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Relu.jpg");
-    ImageIcon c = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Costel.jpg");
-    ImageIcon broom = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Broom.jpg");
-    ImageIcon crossbow = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Crossbow.jpg");
-    ImageIcon gun = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Gun.jpg");
-    ImageIcon poison = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Poison.jpg");
-    ImageIcon spoon = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Spoon.jpg");
-    ImageIcon rope = new ImageIcon("C:\\Users\\marza\\OneDrive\\Desktop\\Eindhoven\\Programming\\Assignments\\Cluedo\\MurderMistery.java\\MurderMistery\\Rope.jpg");
+    ImageIcon v = new ImageIcon("Vasilica.jpg");
+    ImageIcon e = new ImageIcon("Eusebiu.jpg");
+    ImageIcon m = new ImageIcon("Marcela.jpg");
+    ImageIcon g = new ImageIcon("Gigela.jpg");
+    ImageIcon r = new ImageIcon("Relu.jpg");
+    ImageIcon c = new ImageIcon("Costel.jpg");
+    ImageIcon broom = new ImageIcon("Broom.jpg");
+    ImageIcon crossbow = new ImageIcon("Crossbow.jpg");
+    ImageIcon gun = new ImageIcon("Gun.jpg");
+    ImageIcon poison = new ImageIcon("Poison.jpg");
+    ImageIcon spoon = new ImageIcon("Spoon.jpg");
+    ImageIcon rope = new ImageIcon("Rope.jpg");
     
     String[] assumption = {"", "", ""};
     
@@ -148,14 +148,6 @@ public class ButtonListeners implements ActionListener {
     }
 
 
-    public void paintDeck(String[] deck){
-        for (int i = 0; i < 4; i++){
-            this.deck[i] = new JButton(deck[i]);
-            Global.frame.add(this.deck[i]);
-        }
-    }
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -187,7 +179,6 @@ public class ButtonListeners implements ActionListener {
         if (e.getSource() == weaponS) {
             assumption[1] = "spoon";
             visible(Global.weapon, Global.room);
-            
         }
 
         if (e.getSource() == weaponG) {
@@ -215,7 +206,7 @@ public class ButtonListeners implements ActionListener {
             visible(Global.weapon, Global.room);
         }
 
-      
+
     }
     // public static void main(String args[]) {
       //  ButtonListeners btnevents = new ButtonListeners();
