@@ -149,7 +149,7 @@ public class ButtonListeners implements ActionListener {
 
 
     public void paintDeck(String[] deck){
-        for (int i = 0; i< 4; i++){
+        for (int i = 0; i < 4; i++){
             this.deck[i] = new JButton(deck[i]);
             Global.frame.add(this.deck[i]);
         }
@@ -186,29 +186,36 @@ public class ButtonListeners implements ActionListener {
             
         if (e.getSource() == weaponS) {
             assumption[1] = "spoon";
+            visible(Global.weapon, Global.room);
+            
         }
 
         if (e.getSource() == weaponG) {
             assumption[1] = "gun";
+            visible(Global.weapon, Global.room);
         }
 
         if (e.getSource() == weaponR) {
             assumption[1] = "rope";
+            visible(Global.weapon, Global.room);
         }
 
         if (e.getSource() == weaponP) {
             assumption[1] = "poison";
+            visible(Global.weapon, Global.room);
         }
 
         if (e.getSource() == weaponC) {
             assumption[1] = "crossbow";
+            visible(Global.weapon, Global.room);
         }
         
         if (e.getSource() == weaponB) {
             assumption[1] = "broom";
+            visible(Global.weapon, Global.room);
         }
 
-
+      
     }
     // public static void main(String args[]) {
       //  ButtonListeners btnevents = new ButtonListeners();
