@@ -6,13 +6,17 @@ import java.util.Random;
 class Global {
     public static JFrame frame = new JFrame("Play");
     public static JFrame suspect = new JFrame("Make an assumption.  Choose a suspect");
+
     public static JFrame    weapon = new JFrame("Make an assumption.    Choose a weapon");
     public static JFrame   room = new JFrame("Make an assumption.   Choose a room");
+
 }
 
 class MyListener implements ActionListener {
 
     ButtonListeners btn = new ButtonListeners();
+    //Global.suspect.addActionListener(btn);
+
 
     Random r = new Random();
     int n;
@@ -35,6 +39,7 @@ class MyListener implements ActionListener {
 public class Display {
   
     void create() {
+        Deck d = new Deck();
         
 
         JPanel panel = new JPanel();
