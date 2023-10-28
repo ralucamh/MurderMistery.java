@@ -1,10 +1,13 @@
-import java.util.Random; 
+import java.util.Random;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 public class Deck {
     
     void assign() {
+         
         Random rand = new Random();
 
         String[] deck = new String[19];
@@ -75,6 +78,48 @@ public class Deck {
             }
         }
 
+        ImageIcon v = new ImageIcon("images/Vasilica.jpg");
+        Global.frame.add(new JLabel(v));
+        Global.frame.pack();
+
+        int n = 0;
+
+        for (int i = 0; i < 4; i++) {
+            if (players[i][0].equals("Vasilica")) {
+                n++;
+                
+            }
+
+            if (players[i][0].equals("Marcela")) {
+                n++;
+                btn.buttonM.setBounds(n*30, 25, 200, 200); 
+                Global.frame.add(btn.buttonM);
+            }
+
+            if (players[i][0].equals("Gigela")) {
+                n++;
+                btn.buttonG.setBounds(n*30, 25, 200, 200); 
+                Global.frame.add(btn.buttonG);
+            }
+
+            if (players[i][0].equals("Relu")) {
+                n++;
+                btn.buttonR.setBounds(n*30, 25, 200, 200); 
+                Global.frame.add(btn.buttonR);
+            }
+
+            if (players[i][0].equals("Costel")) {
+                n++;
+                btn.buttonC.setBounds(n*30, 25, 200, 200); 
+                Global.frame.add(btn.buttonC);
+            }
+
+            if (players[i][0].equals("Eusebiu")) {
+                n++;
+                btn.buttonE.setBounds(n*30, 25, 200, 200); 
+                Global.frame.add(btn.buttonE);
+            }
+        }
     
     }
 }

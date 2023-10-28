@@ -10,6 +10,8 @@ class Global {
     public static JFrame    weapon = new JFrame("Make an assumption.    Choose a weapon");
     public static JFrame   room = new JFrame("Make an assumption.   Choose a room");
 
+    public static JFrame choice = new JFrame("Choose the player who will show you a card");
+
 }
 
 
@@ -41,7 +43,7 @@ public class Display implements ActionListener {
         sp.setVisible(true);
 
         sp.setLocation(0, 300);
-        
+
         JButton button = new JButton("Roll the dice");
         Color colorOver = new Color(51, 153, 255);
         button.setBackground(colorOver);
@@ -55,6 +57,9 @@ public class Display implements ActionListener {
         Global.frame.setVisible(true);
         Global.frame.setLocationRelativeTo(null);
         Global.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Global.frame.setLayout(null); 
+    
+        d.assign();
     }
 
     @Override
@@ -70,7 +75,11 @@ public class Display implements ActionListener {
             Global.frame.setVisible(false);
             btn.actionPerformed(e);
             Global.suspect.setVisible(true);
-         
+        }
+        if (n == 3 || n == 4) {
+            Global.frame.setVisible(false);
+            btn.actionPerformed(e);
+            Global.choice.setVisible(true);
         }
         
     }

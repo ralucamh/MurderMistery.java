@@ -29,24 +29,29 @@ public class ButtonListeners implements ActionListener {
     JButton library;
     JButton conservatory;
 
+     
+    JButton p1;
+    JButton p2;
+    JButton p3;
+
 
     void visible(JFrame x, JFrame y) {
         x.setVisible(false);
         y.setVisible(true);
     }
 
-    ImageIcon v = new ImageIcon("Vasilica.jpg");
-    ImageIcon e = new ImageIcon("Eusebiu.jpg");
-    ImageIcon m = new ImageIcon("Marcela.jpg");
-    ImageIcon g = new ImageIcon("Gigela.jpg");
-    ImageIcon r = new ImageIcon("Relu.jpg");
-    ImageIcon c = new ImageIcon("Costel.jpg");
-    ImageIcon broom = new ImageIcon("Broom.jpg");
-    ImageIcon crossbow = new ImageIcon("Crossbow.jpg");
-    ImageIcon gun = new ImageIcon("Gun.jpg");
-    ImageIcon poison = new ImageIcon("Poison.jpg");
-    ImageIcon spoon = new ImageIcon("Spoon.jpg");
-    ImageIcon rope = new ImageIcon("Rope.jpg");
+    ImageIcon v = new ImageIcon("images/Vasilica.jpg");
+    ImageIcon e = new ImageIcon("images/Eusebiu.jpg");
+    ImageIcon m = new ImageIcon("images/Marcela.jpg");
+    ImageIcon g = new ImageIcon("images/Gigela.jpg");
+    ImageIcon r = new ImageIcon("images/Relu.jpg");
+    ImageIcon c = new ImageIcon("images/Costel.jpg");
+    ImageIcon broom = new ImageIcon("images/Broom.jpg");
+    ImageIcon crossbow = new ImageIcon("images/Crossbow.jpg");
+    ImageIcon gun = new ImageIcon("images/Gun.jpg");
+    ImageIcon poison = new ImageIcon("images/Poison.jpg");
+    ImageIcon spoon = new ImageIcon("images/Spoon.jpg");
+    ImageIcon rope = new ImageIcon("images/Rope.jpg");
     
     String[] assumption = {"", "", ""};
     
@@ -66,6 +71,11 @@ public class ButtonListeners implements ActionListener {
         Global.room.setLocationRelativeTo(null);
         Global.room.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Global.room.setLayout(null); 
+
+        Global.choice.setSize(500, 500);
+        Global.choice.setLocationRelativeTo(null);
+        Global.choice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Global.choice.setLayout(null); 
           
         buttonM = new JButton(m);
         buttonM.setBounds(30, 25, 200, 300);
@@ -128,24 +138,52 @@ public class ButtonListeners implements ActionListener {
         weaponB.addActionListener(this);
 
         kitchen = new JButton();
-        kitchen.setBounds(450, 335, 200, 300);
+        kitchen.setBounds(10, 35, 160, 260);
         Global.room.add(kitchen);
         kitchen.addActionListener(this);
 
         lounge = new JButton();
-        lounge.setBounds(450, 335, 200, 300);
+        lounge.setBounds(180, 35, 160, 260);
         Global.room.add(lounge);
         lounge.addActionListener(this);
        
         billiardRoom = new JButton();
-        billiardRoom.setBounds(450, 335, 200, 300);
+        billiardRoom.setBounds(350, 35, 160, 260);
         Global.room.add(billiardRoom);
         billiardRoom.addActionListener(this);
         
+        study = new JButton();
+        study.setBounds(520, 35, 160, 260);
+        Global.room.add(study);
+        study.addActionListener(this);
 
+        hall = new JButton();
+        hall.setBounds(80, 330, 160, 260);
+        Global.room.add(hall);
+        hall.addActionListener(this);
 
+        library = new JButton();
+        library.setBounds(265, 330, 160, 260);
+        Global.room.add(library);
+        library.addActionListener(this);
+
+        conservatory = new JButton();
+        conservatory.setBounds(450, 330, 160, 260);
+        Global.room.add(conservatory);
+        conservatory.addActionListener(this);
         
-    }
+        p1 = new JButton("Player1");
+        p1.setBounds(100, 50, 300, 100); 
+        Global.choice.add(p1);
+
+        p2 = new JButton("Player2");
+        p2.setBounds(100, 175, 300, 100); 
+        Global.choice.add(p2);
+
+        p3 = new JButton("Player3");
+        p3.setBounds(100, 300, 300, 100); 
+        Global.choice.add(p3);
+;   }
 
 
     @Override
@@ -206,6 +244,40 @@ public class ButtonListeners implements ActionListener {
             visible(Global.weapon, Global.room);
         }
 
+        if (e.getSource() == kitchen) {
+            assumption[2] = "kitchen";
+            Global.room.setVisible(false);
+        }
+
+        if (e.getSource() == lounge) {
+            assumption[2] = "lounge";
+            Global.room.setVisible(false);
+        }
+
+        if (e.getSource() == billiardRoom) {
+            assumption[2] = "billiardRoom";
+            Global.room.setVisible(false);
+        }
+
+        if (e.getSource() == study) {
+            assumption[2] = "study";
+            Global.room.setVisible(false);
+        }
+
+        if (e.getSource() == hall) {
+            assumption[2] = "hall";
+            Global.room.setVisible(false);
+        }
+
+        if (e.getSource() == library) {
+            assumption[2] = "library";
+            Global.room.setVisible(false);
+        }
+
+        if (e.getSource() == conservatory) {
+            assumption[2] = "conservatory";
+            Global.room.setVisible(false);
+        }
 
     }
     // public static void main(String args[]) {
