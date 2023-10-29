@@ -12,7 +12,6 @@ public class Play {
     public int winner = -1;
 
     Display d = new Display();
-    Algorithm alg = new Algorithm();
 
     void game() {
           for (int i = 0; i < 19; i ++) {
@@ -28,19 +27,6 @@ public class Play {
               }
             }
           }
-          if (d.n == 5 || d.n == 6) {
-        // assumption
-        
-    } else
-      if (d.n == 3 || d.n == 4) {
-        alg.turn1 ();
-        alg.makeassumption (checklist2, suspicion2);
-        alg.turn1 ();
-        alg.makeassumption (checklist3, suspicion3);
-        alg.turn1 ();
-        alg.makeassumption (checklist4, suspicion4);
-        alg.turn1 ();
-      }
 
     }
 }

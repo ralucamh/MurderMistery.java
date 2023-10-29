@@ -2,8 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-
-    
 public class ButtonListeners implements ActionListener {
 
     JButton buttonM;
@@ -59,10 +57,11 @@ public class ButtonListeners implements ActionListener {
     ImageIcon lib = new ImageIcon("images/library.jpg");
     ImageIcon co = new ImageIcon("images/conservatory.jpg");
     
-    String[] assumption = {"", "", ""};
+    public String[] assumption = {"", "", ""};
     
     public ButtonListeners() {
 
+        
         Global.suspect.setSize(700, 700);
         Global.suspect.setLocationRelativeTo(null);
         Global.suspect.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -181,20 +180,46 @@ public class ButtonListeners implements ActionListener {
         p1 = new JButton("Player1");
         p1.setBounds(100, 50, 300, 100); 
         Global.choice.add(p1);
+        p1.addActionListener(this);
 
         p2 = new JButton("Player2");
         p2.setBounds(100, 175, 300, 100); 
         Global.choice.add(p2);
+        p2.addActionListener(this);
 
         p3 = new JButton("Player3");
         p3.setBounds(100, 300, 300, 100); 
         Global.choice.add(p3);
+        p3.addActionListener(this);
 ;   }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        Display d = new Display();
+        Play p = new Play();
+
+        Display display = new Display();
+        for (int i = 0; i < 4; i ++){
+            for(int j = 0; j < 19; j ++) {
+              p.suspicion2[i][j] = 0; 
+            }
+        }
+
+        for (int i = 0; i < 4; i ++){
+            for(int j = 0; j < 19; j ++) {
+              p.suspicion3[i][j] = 0; 
+            }
+        }
+
+        for (int i = 0; i < 4; i ++){
+            for(int j = 0; j < 19; j ++) {
+              p.suspicion4[i][j] = 0; 
+            }
+        }
+         Algorithm alg = new Algorithm();
+
+        if(display.n == 5 || display.n == 6) {
         if (e.getSource() == buttonM) {
             assumption[0] = "Marcel";
             visible(Global.suspect, Global.weapon);
@@ -250,111 +275,146 @@ public class ButtonListeners implements ActionListener {
             visible(Global.weapon, Global.room);
         }
 
-        
-        Play p = new Play();
-        Algorithm alg = new Algorithm();
-
+       
         if (e.getSource() == kitchen) {
+            p.game();
             assumption[2] = "kitchen";
-            alg.turn(p.myChecklist, 0);
+            alg.turnp(p.myChecklist, 0);
+            System.out.print("fdsf");
             alg.makeassumption(p.checklist2, p.suspicion2);
-            alg.turn(p.checklist2, 1);
+            alg.turn(p.suspicion2, p.checklist2,1);
             alg.makeassumption(p.checklist3, p.suspicion3);
-            alg.turn(p.checklist3, 2);
+            alg.turn(p.suspicion3, p.checklist3, 2);
             alg.makeassumption(p.checklist4, p.suspicion4);
-            alg.turn(p.checklist4, 3);
+            alg.turn(p.suspicion4, p.checklist4, 3);
 
             visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == lounge) {
             assumption[2] = "lounge";
-
-            alg.turn(p.myChecklist, 0);
+           p.game();
+            alg.turnp(p.myChecklist, 0);
             alg.makeassumption(p.checklist2, p.suspicion2);
-            alg.turn(p.checklist2, 1);
+            alg.turn(p.suspicion2, p.checklist2,1);
             alg.makeassumption(p.checklist3, p.suspicion3);
-            alg.turn(p.checklist3, 2);
+            alg.turn(p.suspicion3, p.checklist3, 2);
             alg.makeassumption(p.checklist4, p.suspicion4);
-            alg.turn(p.checklist4, 3);
-
+            alg.turn(p.suspicion4, p.checklist4, 3);
             visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == billiardRoom) {
             assumption[2] = "billiardRoom";
-
-            alg.turn(p.myChecklist, 0);
+            p.game();
+            alg.turnp(p.myChecklist, 0);
             alg.makeassumption(p.checklist2, p.suspicion2);
-            alg.turn(p.checklist2, 1);
+            alg.turn(p.suspicion2, p.checklist2,1);
             alg.makeassumption(p.checklist3, p.suspicion3);
-            alg.turn(p.checklist3, 2);
+            alg.turn(p.suspicion3, p.checklist3, 2);
             alg.makeassumption(p.checklist4, p.suspicion4);
-            alg.turn(p.checklist4, 3);
+            alg.turn(p.suspicion4, p.checklist4, 3);
 
             visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == study) {
             assumption[2] = "study";
-
-            alg.turn(p.myChecklist, 0);
+            p.game();
+            alg.turnp(p.myChecklist, 0);
             alg.makeassumption(p.checklist2, p.suspicion2);
-            alg.turn(p.checklist2, 1);
+            alg.turn(p.suspicion2, p.checklist2,1);
             alg.makeassumption(p.checklist3, p.suspicion3);
-            alg.turn(p.checklist3, 2);
+            alg.turn(p.suspicion3, p.checklist3, 2);
             alg.makeassumption(p.checklist4, p.suspicion4);
-            alg.turn(p.checklist4, 3);
+            alg.turn(p.suspicion4, p.checklist4, 3);
 
             visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == hall) {
             assumption[2] = "hall";
-
-            alg.turn(p.myChecklist, 0);
+            p.game();
+            alg.turnp(p.myChecklist, 0);
             alg.makeassumption(p.checklist2, p.suspicion2);
-            alg.turn(p.checklist2, 1);
+            alg.turn(p.suspicion2, p.checklist2,1);
             alg.makeassumption(p.checklist3, p.suspicion3);
-            alg.turn(p.checklist3, 2);
+            alg.turn(p.suspicion3, p.checklist3, 2);
             alg.makeassumption(p.checklist4, p.suspicion4);
-            alg.turn(p.checklist4, 3);
+            alg.turn(p.suspicion4, p.checklist4, 3);
 
             visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == library) {
             assumption[2] = "library";
-
-            alg.turn(p.myChecklist, 0);
+            p.game();
+            alg.turnp(p.myChecklist, 0);
             alg.makeassumption(p.checklist2, p.suspicion2);
-            alg.turn(p.checklist2, 1);
+            alg.turn(p.suspicion2, p.checklist2,1);
             alg.makeassumption(p.checklist3, p.suspicion3);
-            alg.turn(p.checklist3, 2);
+            alg.turn(p.suspicion3, p.checklist3, 2);
             alg.makeassumption(p.checklist4, p.suspicion4);
-            alg.turn(p.checklist4, 3);
+            alg.turn(p.suspicion4, p.checklist4, 3);
 
             visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == conservatory) {
             assumption[2] = "conservatory";
-
-            alg.turn(p.myChecklist, 0);
+            p.game();
+            alg.turnp(p.myChecklist, 0);
             alg.makeassumption(p.checklist2, p.suspicion2);
-            alg.turn(p.checklist2, 1);
+            alg.turn(p.suspicion2, p.checklist2,1);
             alg.makeassumption(p.checklist3, p.suspicion3);
-            alg.turn(p.checklist3, 2);
+            alg.turn(p.suspicion3, p.checklist3, 2);
             alg.makeassumption(p.checklist4, p.suspicion4);
-            alg.turn(p.checklist4, 3);
+            alg.turn(p.suspicion4, p.checklist4, 3);
 
             visible(Global.room, Global.frame);
         }
+    } else 
+        if(display.n == 4 || display.n == 3) {
 
-        /**if (e.getSource() == p1) {
-            alg.n = 1;
+        alg.ask = JOptionPane.showInputDialog("Which card would you like to be shown?");
+        if (e.getSource() == p1) {
+            alg.turn1p (1);
+            alg.question (1, p.checklist2, p.suspicion2);
+            alg.turn1 (p.suspicion2);
+            alg.question (2,p.checklist3, p.suspicion3);
+            alg.turn1 (p.suspicion3);
+            alg.question (3, p.checklist4, p.suspicion4);
+            alg.turn1 (p.suspicion4);
+        
+        } else
+        if (e.getSource() == p2) {
+            alg.turn1p (2);
+            alg.question (1, p.checklist2, p.suspicion2);
+            alg.turn1 (p.suspicion2);
+            alg.question (2,p.checklist3, p.suspicion3);
+            alg.turn1 (p.suspicion3);
+            alg.question (3, p.checklist4, p.suspicion4);
+            alg.turn1 (p.suspicion4);
+  
+        } else {
+            alg.turn1p (3);
+            alg.question (1, p.checklist2, p.suspicion2);
+            alg.turn1 (p.suspicion2);
+            alg.question (2,p.checklist3, p.suspicion3);
+            alg.turn1 (p.suspicion3);
+            alg.question (3, p.checklist4, p.suspicion4);
+            alg.turn1 (p.suspicion4);
+
         }
-        **/
+        visible(Global.choice, Global.frame);
+    }
+    else {
+        if (display.n == 1 || display.n == 2) {
+            p.game();
+        }
+    }
+
+    
 
     }
 }

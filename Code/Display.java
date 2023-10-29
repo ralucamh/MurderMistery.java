@@ -81,7 +81,6 @@ public class Display implements ActionListener {
         }
         if (n == 3 || n == 4) {
             Global.frame.setVisible(false);
-            //btn.actionPerformed(e);
             Global.choice.setVisible(true);
         }
         if (n == 1 || n ==2) {

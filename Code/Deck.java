@@ -37,25 +37,15 @@ public class Deck {
 
         int m = rand.nextInt(6);
         solution[0] = deck[m];
-        //System.out.println(solution[0]);
         deck[m] = " ";
 
         m = rand.nextInt(6) + 6;
         solution[1] = deck[m];
-        //System.out.println(solution[1]);
         deck[m] = " ";
 
         m = rand.nextInt(7) + 12;
         solution[2] = deck[m];
-        //System.out.println(solution[2]);
         deck[m] = " ";
-
-       /**for(int i = 0; i < 19; i++) {
-        System.out.println(deck[i]);
-       }
-
-       System.out.println();
-       **/
 
         for (int i = 0; i < 4; i++) {
             while (players[0][i] == null) {
@@ -67,7 +57,6 @@ public class Deck {
             }
         }
 
-        
 
         for (int i = 0; i < 4; i++) {
             ImageIcon j = new ImageIcon("images/" + players[0][i] + ".jpg");
@@ -137,50 +126,6 @@ public class Deck {
             }
         }
         }
-
-        /**ImageIcon v = new ImageIcon("images/Vasilica.jpg");
-        Global.frame.add(new JLabel(v));
-        Global.frame.pack();
-
-        int n = 0;
-
-        for (int i = 0; i < 4; i++) {
-            if (players[i][0].equals("Vasilica")) {
-                n++;
-                
-            }
-
-            if (players[i][0].equals("Marcela")) {
-                n++;
-                btn.buttonM.setBounds(n*30, 25, 200, 200); 
-                Global.frame.add(btn.buttonM);
-            }
-
-            if (players[i][0].equals("Gigela")) {
-                n++;
-                btn.buttonG.setBounds(n*30, 25, 200, 200); 
-                Global.frame.add(btn.buttonG);
-            }
-
-            if (players[i][0].equals("Relu")) {
-                n++;
-                btn.buttonR.setBounds(n*30, 25, 200, 200); 
-                Global.frame.add(btn.buttonR);
-            }
-
-            if (players[i][0].equals("Costel")) {
-                n++;
-                btn.buttonC.setBounds(n*30, 25, 200, 200); 
-                Global.frame.add(btn.buttonC);
-            }
-
-            if (players[i][0].equals("Eusebiu")) {
-                n++;
-                btn.buttonE.setBounds(n*30, 25, 200, 200); 
-                Global.frame.add(btn.buttonE);
-            }
-        }
-        **/
     
     }
 }
