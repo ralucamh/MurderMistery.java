@@ -52,6 +52,13 @@ public class ButtonListeners implements ActionListener {
     ImageIcon poison = new ImageIcon("images/Poison.jpg");
     ImageIcon spoon = new ImageIcon("images/Spoon.jpg");
     ImageIcon rope = new ImageIcon("images/Rope.jpg");
+    ImageIcon s = new ImageIcon("images/study.jpg");
+    ImageIcon k = new ImageIcon("images/kitchen.jpg");
+    ImageIcon l = new ImageIcon("images/lounge.jpg");
+    ImageIcon b = new ImageIcon("images/billiardRoom.jpg");
+    ImageIcon h = new ImageIcon("images/hall.jpg");
+    ImageIcon lib = new ImageIcon("images/library.jpg");
+    ImageIcon co = new ImageIcon("images/conservatory.jpg");
     
     String[] assumption = {"", "", ""};
     
@@ -137,38 +144,38 @@ public class ButtonListeners implements ActionListener {
         Global.weapon.add(weaponB);
         weaponB.addActionListener(this);
 
-        kitchen = new JButton();
-        kitchen.setBounds(10, 35, 160, 260);
+        kitchen = new JButton(k);
+        kitchen.setBounds(10, 35, 160, 264);
         Global.room.add(kitchen);
         kitchen.addActionListener(this);
 
-        lounge = new JButton();
-        lounge.setBounds(180, 35, 160, 260);
+        lounge = new JButton(l);
+        lounge.setBounds(180, 35, 160, 264);
         Global.room.add(lounge);
         lounge.addActionListener(this);
        
-        billiardRoom = new JButton();
-        billiardRoom.setBounds(350, 35, 160, 260);
+        billiardRoom = new JButton(b);
+        billiardRoom.setBounds(350, 35, 160, 264);
         Global.room.add(billiardRoom);
         billiardRoom.addActionListener(this);
         
-        study = new JButton();
-        study.setBounds(520, 35, 160, 260);
+        study = new JButton(s);
+        study.setBounds(520, 35, 160, 264);
         Global.room.add(study);
         study.addActionListener(this);
 
-        hall = new JButton();
-        hall.setBounds(80, 330, 160, 260);
+        hall = new JButton(h);
+        hall.setBounds(80, 330, 160, 264);
         Global.room.add(hall);
         hall.addActionListener(this);
 
-        library = new JButton();
-        library.setBounds(265, 330, 160, 260);
+        library = new JButton(lib);
+        library.setBounds(265, 330, 160, 264);
         Global.room.add(library);
         library.addActionListener(this);
 
-        conservatory = new JButton();
-        conservatory.setBounds(450, 330, 160, 260);
+        conservatory = new JButton(co);
+        conservatory.setBounds(450, 330, 160, 264);
         Global.room.add(conservatory);
         conservatory.addActionListener(this);
         
