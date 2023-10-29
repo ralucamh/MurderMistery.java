@@ -21,64 +21,84 @@ public class Deck {
         deck[4] = "Costel";
         deck[5] = "Eusebiu";
 
-        deck[6] = "spoon";
-        deck[7] = "gun";
-        deck[8] = "rope";
-        deck[9] = "poison";
-        deck[10] = "crossbow";
-        deck[11] = "broom";
+        deck[6] = "Spoon";
+        deck[7] = "Gun";
+        deck[8] = "Rope";
+        deck[9] = "Poison";
+        deck[10] = "Crossbow";
+        deck[11] = "Broom";
 
-        deck[12] = "";
-        deck[13] = "";
-        deck[14] = "";
-        deck[15] = "";
-        deck[16] = "";
-        deck[17] = "";
-        deck[18] = "";
+        deck[12] = "kitchen";
+        deck[13] = "study";
+        deck[14] = "lounge";
+        deck[15] = "library";
+        deck[16] = "billiardRoom";
+        deck[17] = "conservatory";
+        deck[18] = "hall";
 
-    
+        int m = rand.nextInt(6);
+        solution[0] = deck[m];
+        //System.out.println(solution[0]);
+        deck[m] = " ";
 
-        for (int i = 0; i < 3; i++) {
-            int n = rand.nextInt(19);
-            if (deck[n] != null) {
-                solution[i] = deck[n];
-                deck[n] = "";
-            }
-        } 
+        m = rand.nextInt(6) + 6;
+        solution[1] = deck[m];
+        //System.out.println(solution[1]);
+        deck[m] = " ";
+
+        m = rand.nextInt(7) + 12;
+        solution[2] = deck[m];
+        //System.out.println(solution[2]);
+        deck[m] = " ";
+
+       /**for(int i = 0; i < 19; i++) {
+        System.out.println(deck[i]);
+       }
+
+       System.out.println();
+       **/
 
         for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals(" ")) {
                 players[i][0] = deck[n]; 
-                deck[n] = "";
+                deck[n] = " ";
             }
         }
 
         for (int i = 0; i < 4; i++) {
+            ImageIcon j = new ImageIcon("images/" + players[i][0] + ".jpg");
+            JButton h = new JButton(j);
+            h.setBounds(5+(i*170), 10, 160, 270);
+            Global.frame.add(h);
+            Global.frame.setLayout(null); 
+        }
+
+        for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals(" ")) {
                 players[i][1] = deck[n];
-                deck[n] = "";
+                deck[n] = " ";
             }
         }
 
         for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals(" ")) {
                 players[i][2] = deck[n];
-                deck[n] = "";
+                deck[n] = " ";
             }
         }
 
         for (int i = 0; i < 4; i++) {
             int n = rand.nextInt(19);
-            if (deck[n] != null) {
+            if (!deck[n].equals(" ")) {
                 players[i][3] = deck[n];
-                deck[n] = "";
+                deck[n] = " ";
             }
         }
 
-        ImageIcon v = new ImageIcon("images/Vasilica.jpg");
+        /**ImageIcon v = new ImageIcon("images/Vasilica.jpg");
         Global.frame.add(new JLabel(v));
         Global.frame.pack();
 
@@ -120,6 +140,7 @@ public class Deck {
                 Global.frame.add(btn.buttonE);
             }
         }
+        **/
     
     }
 }

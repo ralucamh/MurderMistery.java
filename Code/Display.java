@@ -81,6 +81,10 @@ public class Display implements ActionListener {
             btn.actionPerformed(e);
             Global.choice.setVisible(true);
         }
+        if (n == 1 || n ==2) {
+            Global.frame.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Oops! You skip a turn :(");
+        }
         
     }
 

@@ -34,7 +34,6 @@ public class ButtonListeners implements ActionListener {
     JButton p2;
     JButton p3;
 
-
     void visible(JFrame x, JFrame y) {
         x.setVisible(false);
         y.setVisible(true);
@@ -83,7 +82,7 @@ public class ButtonListeners implements ActionListener {
         Global.choice.setLocationRelativeTo(null);
         Global.choice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Global.choice.setLayout(null); 
-          
+        
         buttonM = new JButton(m);
         buttonM.setBounds(30, 25, 200, 300);
         Global.suspect.add(buttonM);
