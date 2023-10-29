@@ -1,10 +1,10 @@
 import java.util.*;
 
 public class Algorithm {
-   String[] assumption;
+   public static String[] assumption;
    String ask;
-   String[] deck = Deck.deck;
-   int [][] suspicion = Play.suspicion2;
+   public  static String[] deck = Deck.deck;
+   public static int [][] suspicion = Play.suspicion2;
    void asksuspect(boolean[] checklist, int suspicion[][]) {
       
       int mx = 0;
@@ -191,7 +191,7 @@ public class Algorithm {
     
      
    }
-    void makeassumption(boolean[] checklist, int suspicion[][]){
+    void makeassumption(boolean[] checklist, int[][] suspicion){
       
       int mx = 0;
       Random r = new Random();
@@ -250,7 +250,7 @@ public class Algorithm {
    }
     }
     
-    void turn(String[][] player, boolean[] checklist, int x){
+     public static void turns(boolean[] checklist, int x) {
       String v[] = new String[4];
       int w[] = new int[4];
        int k = 0;
@@ -279,8 +279,8 @@ public class Algorithm {
       if (x != 0)
        {
          for(int i = 0; i < 4; i++){
-          if (player[0][i].equals(assumption[0]) || player[0][i].equals(assumption[1]) || player[0][i].equals(assumption[2])){
-            v[++k] = player[0][i]; 
+          if (Deck.players[0][i].equals(assumption[0]) || Deck.players[0][i].equals(assumption[1]) || Deck.players[0][i].equals(assumption[2])){
+            v[++k] = Deck.players[0][i]; 
             w[k] = 0;
           }
        }
@@ -288,8 +288,8 @@ public class Algorithm {
        
       if (x != 1) {
        for(int i = 0; i < 4; i++){
-          if (player[1][i].equals(assumption[0]) || player[1][i].equals(assumption[1]) || player[1][i].equals(assumption[2])){
-            v[++k] = player[1][i]; 
+          if (Deck.players[1][i].equals(assumption[0]) || Deck.players[1][i].equals(assumption[1]) || Deck.players[1][i].equals(assumption[2])){
+            v[++k] = Deck.players[1][i]; 
             w[k] = 1;
           }
        }
@@ -297,8 +297,8 @@ public class Algorithm {
 
       if (x != 2) {
        for(int i = 0; i < 4; i++){
-          if (player[2][i].equals(assumption[0]) || player[2][i].equals(assumption[1]) || player[2][i].equals(assumption[2])){
-            v[++k] = player[2][i]; 
+          if (Deck.players[2][i].equals(assumption[0]) || Deck.players[2][i].equals(assumption[1]) || Deck.players[2][i].equals(assumption[2])){
+            v[++k] = Deck.players[2][i]; 
             w[k] = 2;
           }
        }
@@ -306,8 +306,8 @@ public class Algorithm {
 
       if (x != 3) {
        for(int i = 0; i < 4; i++){
-          if (player[3][i].equals(assumption[0]) || player[3][i].equals(assumption[1]) || player[3][i].equals(assumption[2])){
-            v[++k] = player[3][i]; 
+          if (Deck.players[3][i].equals(assumption[0]) || Deck.players[3][i].equals(assumption[1]) || Deck.players[3][i].equals(assumption[2])){
+            v[++k] = Deck.players[3][i]; 
             w[k] = 3;
           }
        }

@@ -5,13 +5,14 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class Deck {
-    
+    public static String[][] players = new String[4][4];
+    public static String[] deck = new String[19];
     void assign() {
          
         Random rand = new Random();
 
-        String[] deck = new String[19];
-        String[][] players = new String[4][4];
+        
+        
         String[] solution = new String[3];
 
         deck[0] = "Marcela";
