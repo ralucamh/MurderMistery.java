@@ -1,28 +1,29 @@
 import java.util.*;
 
 public class Algorithm {
+   Deck d = new Deck();
+   Play p = new Play();
    public static String[] assumption;
-   String ask;
-   public  static String[] deck = Deck.deck;
+   public static String ask;
    public static int [][] suspicion = Play.suspicion2;
    void asksuspect(boolean[] checklist, int suspicion[][]) {
-      
+
       int mx = 0;
       Random r = new Random();
       int n;
-    for (int i = 0; i < 6; i ++) {
-         for(int j = 0; j < 4; j ++){
-         if (suspicion[j][i] > mx && checklist[i] == false) {
-            ask = deck[i];
-            mx = suspicion[j][i];
+      for (int i = 0; i < 6; i ++) {
+            for(int j = 0; j < 4; j ++){
+               if (suspicion[j][i] > mx && checklist[i] == false) {
+                  ask = d.deck[i];
+                  mx = suspicion[j][i];
+               }
          }
-      }
       }
 
       while (ask == null) {
       n = r.nextInt(6);
       if (checklist[n] == false) {
-      ask = deck[n];
+      ask = d.deck[n];
       }
    }
    }
@@ -35,7 +36,7 @@ public class Algorithm {
     for (int i = 6; i < 12; i ++) {
          for (int j = 0; j < 4; j ++) {
          if (suspicion[j][i] > mx && checklist[i] == false) {
-            ask = deck[i];
+            ask = d.deck[i];
             mx = suspicion[j][i];
          }
       }
@@ -44,7 +45,7 @@ public class Algorithm {
       while (ask == null) {
       n = 6 + r.nextInt(6);
       if (checklist[n] == false) {
-      ask = deck[n];
+      ask = d.deck[n];
       }
    }
    }
@@ -58,7 +59,7 @@ public class Algorithm {
       for (int i = 12; i < 19; i ++) {
          for(int j = 0; j < 4; j ++){
          if (suspicion[j][i] > mx && checklist[i] == false) {
-            ask = deck[i];
+            ask = d.deck[i];
             mx = suspicion[j][i];
          }
       }
@@ -67,7 +68,7 @@ public class Algorithm {
       while (ask == null) {
       n = 12 + r.nextInt(6);
       if (checklist[n] == false) {
-      ask = deck[n];
+      ask = d.deck[n];
       }
    }
    }
@@ -200,7 +201,7 @@ public class Algorithm {
       for (int i = 0; i < 6; i ++) {
          for(int j = 0; j < 4; j ++){
          if (suspicion[j][i] > mx && checklist[i] == false) {
-            assumption[0] = deck[i];
+            assumption[0] = d.deck[i];
             mx = suspicion[j][i];
          }
       }
@@ -211,7 +212,7 @@ public class Algorithm {
        for (int i = 6; i < 12; i ++) {
          for(int j = 0; j < 4; j ++){
          if (suspicion[j][i] > mx && checklist[i] == false) {
-            assumption[1] = deck[i];
+            assumption[1] = d.deck[i];
             mx = suspicion[j][i];
          }
       }
@@ -222,7 +223,7 @@ public class Algorithm {
       for (int i = 12; i < 19; i ++) {
          for(int j = 0; j < 4; j ++){
          if (suspicion[j][i] > mx && checklist[i] == false) {
-            assumption[2] = deck[i];
+            assumption[2] = d.deck[i];
             mx = suspicion[j][i];
          }
       }
@@ -231,26 +232,26 @@ public class Algorithm {
    while (assumption[0] == null) {
       n = r.nextInt(6);
       if (checklist[n] == false) {
-      assumption[0] = deck[n];
+      assumption[0] = d.deck[n];
       }
    }
 
    while (assumption[1] == null) {
       n = 6 + r.nextInt(6);
       if (checklist[n] == false) {
-      assumption[1] = deck[n];
+      assumption[1] = d.deck[n];
       }
    }
 
    while (assumption[2] == null) {
       n = 12 + r.nextInt(7);
       if (checklist[n] == false) {
-      assumption[2] = deck[n];
+      assumption[2] = d.deck[n];
       }
    }
     }
     
-     public static void turns(boolean[] checklist, int x) {
+     public void turn(boolean[] checklist, int x) {
       String v[] = new String[4];
       int w[] = new int[4];
        int k = 0;
@@ -318,12 +319,13 @@ public class Algorithm {
         while(ok == false) {
          n = r.nextInt(k);
          for(int i = 0;i < 19; i ++){
-            if (deck[i].equals(v[n]) && checklist[i] == false){
+            if (d.deck[i].equals(v[n]) && checklist[i] == false){
                 checklist[i] = true;
+                
                 ok = true;
                 for (int j = 0; j < 4; j ++) {
                   for (int l = 0; l < 19; l++) {
-                  if (deck[l].equals(v[k]));
+                  if (d.deck[l].equals(v[k]));
                 suspicion[j][l] = -10;
                 }
                }
@@ -339,15 +341,15 @@ public class Algorithm {
         }
        
        if (nr == k) {
-         Play.winner = x;
+         p.winner = x;
        }
         
        for (int i = 0; i < 3; i ++){
           if (x != 2 && w[n] != 2) {
             for (int j = 0; j < 19; j++) {
-               if (assumption[i].equals(deck[j])) {
-                  if (Play.suspicion2[w[n]][j] == 0) {
-            Play.suspicion2[w[n]][j] ++;
+               if (assumption[i].equals(d.deck[j])) {
+                  if (p.suspicion2[w[n]][j] == 0) {
+            p.suspicion2[w[n]][j] ++;
           }
          }
          }
@@ -357,8 +359,8 @@ public class Algorithm {
        for (int i = 0; i < 3; i ++){
           if (x != 3 && w[n] != 3) {
             for (int j = 0; j < 19; j++) {
-               if (assumption[i].equals(deck[j])) {
-            Play.suspicion3[w[n]][j] ++;
+               if (assumption[i].equals(d.deck[j])) {
+            p.suspicion3[w[n]][j] ++;
           }
          }
          }
@@ -367,31 +369,58 @@ public class Algorithm {
        for (int i = 0; i < 3; i ++){
           if (x != 4 && w[n] != 4) {
             for (int j = 0; j < 19; j++) {
-               if (assumption[i].equals(deck[j])) {
-            Play.suspicion4[w[n]][j] ++;
+               if (assumption[i].equals(d.deck[j])) {
+            p.suspicion4[w[n]][j] ++;
           }
          }
          }
        }       
     }
 
-    void turn1 (String[][] player) {
+    public void turn1 () {
       boolean ok = false;
       Random r = new Random();
       int n = r.nextInt(4); // random or smart
       int x = -1;
       for (int i = 0; i < 19; i ++) {
-         if (deck[i].equals(ask)) {
+         if (d.deck[i].equals(ask)) {
             x = i;
          }
       }
       for (int i = 0; i < 4; i ++) {
-      if (player[n][i].equals(ask)) {
+      if (Deck.players[n][i].equals(ask)) {
          ok = true;
-         Play.myChecklist[x] = true;
-         Play.checklist2[x] = true;
-         Play.checklist3[x] = true;
-         Play.checklist4[x] = true;
+         p.myChecklist[x] = true;
+         p.checklist2[x] = true;
+         p.checklist3[x] = true;
+         p.checklist4[x] = true;
+      }
+    }
+
+    if (ok == false) {
+      for(int i = 0; i < 4; i ++) {
+         suspicion[i][x] = -1;
+      }
+    }
+}
+
+    public void turn1p (int n) {
+      boolean ok = false;
+      Random r = new Random();
+      n = r.nextInt(4); // random or smart
+      int x = -1;
+      for (int i = 0; i < 19; i ++) {
+         if (d.deck[i].equals(ask)) {
+            x = i;
+         }
+      }
+      for (int i = 0; i < 4; i ++) {
+      if (Deck.players[n][i].equals(ask)) {
+         ok = true;
+         p.myChecklist[x] = true;
+         p.checklist2[x] = true;
+         p.checklist3[x] = true;
+         p.checklist4[x] = true;
       }
     }
 

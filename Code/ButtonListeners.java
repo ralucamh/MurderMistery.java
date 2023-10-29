@@ -250,48 +250,111 @@ public class ButtonListeners implements ActionListener {
             visible(Global.weapon, Global.room);
         }
 
+        
+        Play p = new Play();
+        Algorithm alg = new Algorithm();
+
         if (e.getSource() == kitchen) {
             assumption[2] = "kitchen";
-            Global.room.setVisible(false);
+            alg.turn(p.myChecklist, 0);
+            alg.makeassumption(p.checklist2, p.suspicion2);
+            alg.turn(p.checklist2, 1);
+            alg.makeassumption(p.checklist3, p.suspicion3);
+            alg.turn(p.checklist3, 2);
+            alg.makeassumption(p.checklist4, p.suspicion4);
+            alg.turn(p.checklist4, 3);
+
+            visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == lounge) {
             assumption[2] = "lounge";
-            Global.room.setVisible(false);
+
+            alg.turn(p.myChecklist, 0);
+            alg.makeassumption(p.checklist2, p.suspicion2);
+            alg.turn(p.checklist2, 1);
+            alg.makeassumption(p.checklist3, p.suspicion3);
+            alg.turn(p.checklist3, 2);
+            alg.makeassumption(p.checklist4, p.suspicion4);
+            alg.turn(p.checklist4, 3);
+
+            visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == billiardRoom) {
             assumption[2] = "billiardRoom";
-            Global.room.setVisible(false);
+
+            alg.turn(p.myChecklist, 0);
+            alg.makeassumption(p.checklist2, p.suspicion2);
+            alg.turn(p.checklist2, 1);
+            alg.makeassumption(p.checklist3, p.suspicion3);
+            alg.turn(p.checklist3, 2);
+            alg.makeassumption(p.checklist4, p.suspicion4);
+            alg.turn(p.checklist4, 3);
+
+            visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == study) {
             assumption[2] = "study";
-            Global.room.setVisible(false);
+
+            alg.turn(p.myChecklist, 0);
+            alg.makeassumption(p.checklist2, p.suspicion2);
+            alg.turn(p.checklist2, 1);
+            alg.makeassumption(p.checklist3, p.suspicion3);
+            alg.turn(p.checklist3, 2);
+            alg.makeassumption(p.checklist4, p.suspicion4);
+            alg.turn(p.checklist4, 3);
+
+            visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == hall) {
             assumption[2] = "hall";
-            Global.room.setVisible(false);
+
+            alg.turn(p.myChecklist, 0);
+            alg.makeassumption(p.checklist2, p.suspicion2);
+            alg.turn(p.checklist2, 1);
+            alg.makeassumption(p.checklist3, p.suspicion3);
+            alg.turn(p.checklist3, 2);
+            alg.makeassumption(p.checklist4, p.suspicion4);
+            alg.turn(p.checklist4, 3);
+
+            visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == library) {
             assumption[2] = "library";
-            Global.room.setVisible(false);
+
+            alg.turn(p.myChecklist, 0);
+            alg.makeassumption(p.checklist2, p.suspicion2);
+            alg.turn(p.checklist2, 1);
+            alg.makeassumption(p.checklist3, p.suspicion3);
+            alg.turn(p.checklist3, 2);
+            alg.makeassumption(p.checklist4, p.suspicion4);
+            alg.turn(p.checklist4, 3);
+
+            visible(Global.room, Global.frame);
         }
 
         if (e.getSource() == conservatory) {
             assumption[2] = "conservatory";
-            Global.room.setVisible(false);
+
+            alg.turn(p.myChecklist, 0);
+            alg.makeassumption(p.checklist2, p.suspicion2);
+            alg.turn(p.checklist2, 1);
+            alg.makeassumption(p.checklist3, p.suspicion3);
+            alg.turn(p.checklist3, 2);
+            alg.makeassumption(p.checklist4, p.suspicion4);
+            alg.turn(p.checklist4, 3);
+
+            visible(Global.room, Global.frame);
         }
 
-        Play p = new Play();
-        if(!assumption[2].equals("")) {
-            p.game();
+        /**if (e.getSource() == p1) {
+            alg.n = 1;
         }
+        **/
 
     }
-    // public static void main(String args[]) {
-      //  ButtonListeners btnevents = new ButtonListeners();
-   // }
 }

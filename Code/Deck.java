@@ -10,8 +10,6 @@ public class Deck {
     void assign() {
          
         Random rand = new Random();
-
-        
         
         String[] solution = new String[3];
 
@@ -68,6 +66,7 @@ public class Deck {
                 }
             }
         }
+
         
 
         for (int i = 0; i < 4; i++) {
@@ -106,6 +105,37 @@ public class Deck {
                     deck[n] = " ";
                 }
             }
+
+        deck[0] = "Marcela";
+        deck[1] = "Vasilica";
+        deck[2] = "Gigela";
+        deck[3] = "Relu";
+        deck[4] = "Costel";
+        deck[5] = "Eusebiu";
+
+        deck[6] = "Spoon";
+        deck[7] = "Gun";
+        deck[8] = "Rope";
+        deck[9] = "Poison";
+        deck[10] = "Crossbow";
+        deck[11] = "Broom";
+
+        deck[12] = "kitchen";
+        deck[13] = "study";
+        deck[14] = "lounge";
+        deck[15] = "library";
+        deck[16] = "billiardRoom";
+        deck[17] = "conservatory";
+        deck[18] = "hall";
+
+        Play p = new Play();
+        for (int k = 0; k < 4; k++) {
+            for (int j = 0; j < 19; j ++) {
+                if (players[0][k].equals(deck[j])) {
+                    p.myChecklist[j] = true;
+                }
+            }
+        }
         }
 
         /**ImageIcon v = new ImageIcon("images/Vasilica.jpg");
