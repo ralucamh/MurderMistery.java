@@ -59,42 +59,50 @@ public class Deck {
        **/
 
         for (int i = 0; i < 4; i++) {
-            int n = rand.nextInt(19);
-            if (!deck[n].equals(" ")) {
-                players[i][0] = deck[n]; 
-                deck[n] = " ";
+            while (players[0][i] == null) {
+                int n = rand.nextInt(19);
+                if (!deck[n].equals(" ")) {
+                    players[0][i] = deck[n]; 
+                    deck[n] = " ";
+                }
             }
         }
 
         for (int i = 0; i < 4; i++) {
-            ImageIcon j = new ImageIcon("images/" + players[i][0] + ".jpg");
+            ImageIcon j = new ImageIcon("images/" + players[0][i] + ".jpg");
             JButton h = new JButton(j);
-            h.setBounds(5+(i*170), 10, 160, 270);
+            h.setBounds(5+(i*170), 10, 170, 270);
             Global.frame.add(h);
             Global.frame.setLayout(null); 
         }
 
         for (int i = 0; i < 4; i++) {
-            int n = rand.nextInt(19);
-            if (!deck[n].equals(" ")) {
-                players[i][1] = deck[n];
-                deck[n] = " ";
+            while (players[1][i] == null) {
+                int n = rand.nextInt(19);
+                if (!deck[n].equals(" ")) {
+                    players[1][i] = deck[n]; 
+                    deck[n] = " ";
+                }
             }
         }
 
         for (int i = 0; i < 4; i++) {
-            int n = rand.nextInt(19);
-            if (!deck[n].equals(" ")) {
-                players[i][2] = deck[n];
-                deck[n] = " ";
+            while (players[2][i] == null) {
+                int n = rand.nextInt(19);
+                if (!deck[n].equals(" ")) {
+                    players[2][i] = deck[n]; 
+                    deck[n] = " ";
+                }
             }
         }
 
         for (int i = 0; i < 4; i++) {
-            int n = rand.nextInt(19);
-            if (!deck[n].equals(" ")) {
-                players[i][3] = deck[n];
-                deck[n] = " ";
+            while (players[2][i] == null) {
+                int n = rand.nextInt(19);
+                if (!deck[n].equals(" ")) {
+                    players[2][i] = deck[n]; 
+                    deck[n] = " ";
+                }
             }
         }
 

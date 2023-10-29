@@ -285,6 +285,11 @@ public class ButtonListeners implements ActionListener {
             Global.room.setVisible(false);
         }
 
+        Play p = new Play();
+        if(!assumption[2].equals("")) {
+            p.game();
+        }
+
     }
     // public static void main(String args[]) {
       //  ButtonListeners btnevents = new ButtonListeners();
