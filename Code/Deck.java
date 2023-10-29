@@ -67,6 +67,7 @@ public class Deck {
                 }
             }
         }
+        
 
         for (int i = 0; i < 4; i++) {
             ImageIcon j = new ImageIcon("images/" + players[0][i] + ".jpg");
