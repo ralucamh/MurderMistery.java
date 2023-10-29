@@ -6,12 +6,12 @@ public class Play {
     public static boolean[] checklist2 = new boolean[19];
     public static boolean[] checklist3 = new boolean[19];
     public static boolean[] checklist4 = new boolean[19];
-    public static boolean ok = false;
+    public static int winner = -1;
     void game() {
-        while (ok == true) {
+        while (winner == -1) {
         if (dice == 5 || dice == 6) {
         // assumption
-        turn (player[0], myChecklist, 0);
+        Algorithm.turn (player[0], myChecklist, 0);
         makeassumption (checklist2, suspicion2);
         turn (player[1], checklist2, 1);
         makeassumption (checklist3, suspicion3);
